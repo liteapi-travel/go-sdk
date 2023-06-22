@@ -32,6 +32,7 @@ func main() {
     email := "johndoe@nlite.ml" // string | Email ID of the guest (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.GuestAndLoyaltyApi.GuestsGet(context.Background()).Email(email).Execute()
     if err != nil {

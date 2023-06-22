@@ -37,6 +37,7 @@ func main() {
     countryCode := "SG" // string | Country code in iso-2 format (example: SG)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataCitiesGet(context.Background()).CountryCode(countryCode).Execute()
     if err != nil {
@@ -102,6 +103,7 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataCountriesGet(context.Background()).Execute()
     if err != nil {
@@ -163,6 +165,7 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataCurrenciesGet(context.Background()).Execute()
     if err != nil {
@@ -225,6 +228,7 @@ func main() {
     hotelId := int32(57871) // int32 | Unique ID of a hotel
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataHotelGet(context.Background()).HotelId(hotelId).Execute()
     if err != nil {
@@ -297,6 +301,7 @@ func main() {
     distance := int32(1000) // int32 | distance in meters (min 1000m) (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataHotelsGet(context.Background()).CountryCode(countryCode).CityName(cityName).Offset(offset).Limit(limit).Longitude(longitude).Latitude(latitude).Distance(distance).Execute()
     if err != nil {
@@ -368,6 +373,7 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.StaticDataApi.DataIataCodesGet(context.Background()).Execute()
     if err != nil {

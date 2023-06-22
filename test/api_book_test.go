@@ -11,20 +11,22 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/liteapi-travel/go-sdk"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/liteapi-travel/go-sdk"
 )
 
 func Test_openapi_BookApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
+	configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY")
 	apiClient := openapiclient.NewAPIClient(configuration)
 
 	t.Run("Test BookApiService RatesBookPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BookApi.RatesBookPost(context.Background()).Execute()
 
@@ -36,7 +38,7 @@ func Test_openapi_BookApiService(t *testing.T) {
 
 	t.Run("Test BookApiService RatesPrebookPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BookApi.RatesPrebookPost(context.Background()).Execute()
 

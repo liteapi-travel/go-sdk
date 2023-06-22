@@ -33,6 +33,7 @@ func main() {
     ratesBookPostRequest := *openapiclient.NewRatesBookPostRequest("PrebookId_example", *openapiclient.NewRatesBookPostRequestGuestInfo("GuestFirstName_example", "GuestLastName_example", "GuestEmail_example")) // RatesBookPostRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.BookApi.RatesBookPost(context.Background()).RatesBookPostRequest(ratesBookPostRequest).Execute()
     if err != nil {
@@ -99,6 +100,7 @@ func main() {
     body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.BookApi.RatesPrebookPost(context.Background()).Body(body).Execute()
     if err != nil {

@@ -34,6 +34,7 @@ func main() {
     bookingId := " hSq2gVDrf" // string | The Booking Id that needs to be retrieved
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.BookingManagementApi.BookingsBookingIdGet(context.Background(), bookingId).Execute()
     if err != nil {
@@ -104,6 +105,7 @@ func main() {
     bookingId := "hSq2gVDrf" // string | (Required) The unique identifier of the booking you would like to update.
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.BookingManagementApi.BookingsBookingIdPut(context.Background(), bookingId).Execute()
     if err != nil {
@@ -174,6 +176,7 @@ func main() {
     guestId := "FrT56hfty" // string | The Guest Id of the user
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.BookingManagementApi.BookingsGet(context.Background()).GuestId(guestId).Execute()
     if err != nil {

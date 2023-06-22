@@ -11,20 +11,22 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/liteapi-travel/go-sdk"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/liteapi-travel/go-sdk"
 )
 
 func Test_openapi_GuestAndLoyaltyApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
+	configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY")
 	apiClient := openapiclient.NewAPIClient(configuration)
 
 	t.Run("Test GuestAndLoyaltyApiService GuestsGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.GuestAndLoyaltyApi.GuestsGet(context.Background()).Execute()
 

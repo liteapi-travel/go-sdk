@@ -11,20 +11,22 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/liteapi-travel/go-sdk"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/liteapi-travel/go-sdk"
 )
 
 func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
+	configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY")
 	apiClient := openapiclient.NewAPIClient(configuration)
 
 	t.Run("Test StaticDataApiService DataCitiesGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataCitiesGet(context.Background()).Execute()
 
@@ -36,7 +38,7 @@ func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	t.Run("Test StaticDataApiService DataCountriesGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataCountriesGet(context.Background()).Execute()
 
@@ -48,7 +50,7 @@ func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	t.Run("Test StaticDataApiService DataCurrenciesGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataCurrenciesGet(context.Background()).Execute()
 
@@ -60,7 +62,7 @@ func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	t.Run("Test StaticDataApiService DataHotelGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataHotelGet(context.Background()).Execute()
 
@@ -72,7 +74,7 @@ func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	t.Run("Test StaticDataApiService DataHotelsGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataHotelsGet(context.Background()).Execute()
 
@@ -84,7 +86,7 @@ func Test_openapi_StaticDataApiService(t *testing.T) {
 
 	t.Run("Test StaticDataApiService DataIataCodesGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StaticDataApi.DataIataCodesGet(context.Background()).Execute()
 

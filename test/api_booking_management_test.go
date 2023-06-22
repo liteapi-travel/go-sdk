@@ -11,20 +11,22 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/liteapi-travel/go-sdk"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/liteapi-travel/go-sdk"
 )
 
 func Test_openapi_BookingManagementApiService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
+	configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY")
 	apiClient := openapiclient.NewAPIClient(configuration)
 
 	t.Run("Test BookingManagementApiService BookingsBookingIdGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var bookingId string
 
@@ -38,7 +40,7 @@ func Test_openapi_BookingManagementApiService(t *testing.T) {
 
 	t.Run("Test BookingManagementApiService BookingsBookingIdPut", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var bookingId string
 
@@ -52,7 +54,7 @@ func Test_openapi_BookingManagementApiService(t *testing.T) {
 
 	t.Run("Test BookingManagementApiService BookingsGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BookingManagementApi.BookingsGet(context.Background()).Execute()
 

@@ -40,6 +40,7 @@ func main() {
     guestId := "testtraveler1" // string | Unique traveler ID if available (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SearchApi.HotelsGet(context.Background()).HotelIds(hotelIds).Checkin(checkin).Checkout(checkout).Currency(currency).GuestNationality(guestNationality).Adults(adults).Children(children).GuestId(guestId).Execute()
     if err != nil {
@@ -120,6 +121,7 @@ func main() {
     guestId := "traveler1" // string | Unique traveler ID if available (optional)
 
     configuration := openapiclient.NewConfiguration()
+    configuration.AddDefaultHeader("X-API-KEY", "YOUR_API_KEY") 
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SearchApi.HotelsRatesGet(context.Background()).HotelIds(hotelIds).Checkin(checkin).Checkout(checkout).GuestNationality(guestNationality).Currency(currency).Adults(adults).Children(children).GuestId(guestId).Execute()
     if err != nil {
