@@ -25,6 +25,7 @@
     - [Booking cancel](#booking-cancel)
 - [Guest and loyalty](#guest-and-loyalty)
   - [Guests](#guests)
+- [Example Project](#example-project)
 
 # Introduction
 [liteAPI](https://www.liteapi.travel/) is an innovative and robust collection of infrastructure APIs that cater to the travel industry. It is designed to empower developers, offering them the fastest way to build and launch comprehensive travel applications.
@@ -65,7 +66,7 @@ Run any of the normal go commands (build/install/test). The Go toolchain will re
 Alternatively, you can also explicitly go get the package into a project:
 
 ```sh
-go get -u github.com/liteapi-travel/go-sdk/v2
+    go get -u github.com/liteapi-travel/go-sdk/v2
 ```
 
 Then, reference liteapi in a Go program with import:
@@ -169,7 +170,7 @@ The GetHotels function returns a list of hotels available based on different sea
 
 *  <h4 style="color:#9155fd; font-weight: 800;"> Example :</h4>
 ```go
-	countryCode := "SG" 
+    countryCode := "SG" 
     cityName := "Singapore"
 
     result, res, err := apiClient.StaticDataApi.GetHotels(context.Background()).CountryCode(countryCode).CityName(cityName).Execute()
@@ -178,7 +179,7 @@ The GetHotels function returns a list of hotels available based on different sea
 To utilize optional values, you can invoke the function as follows:
 
 ```go
-	countryCode := "SG" 
+    countryCode := "SG" 
     cityName := "Singapore"
 	//Optional values
     offset := int32(0) 
@@ -231,7 +232,7 @@ The GetHotelDetails function returns all the static contents details of a hotel 
 *  <h4 style="color:#9155fd; font-weight: 800;"> Example :</h4>
 ```go
     hotelId := "lp24373"
-	result, res, err := apiClient.StaticDataApi.GetHotelDetails(context.Background()).HotelId(hotelId).Execute()
+    result, res, err := apiClient.StaticDataApi.GetHotelDetails(context.Background()).HotelId(hotelId).Execute()
 ```
 *  <h4 style="color:#9155fd; font-weight: 800;"> Parameters :</h4>
 | Name        | Type       | Description          | Notes      |
@@ -513,16 +514,15 @@ The response will confirm the booking along with a booking Id and a hotel confir
 
 If you wish to utilize a credit card, simply invoke the function as follows:
 ```go
-    prebookId := "8iaO7PXBU";
-    guestFirstName := "Kim";
-    guestLastName := "James"; 
-    guestEmail := "test@nlite.ml";
-    paymentMethod := "CREDIT_CARD";
-    holderName := "Kim James";
-    cardNumber := "4242424242424242",;
-    expireDate =: "11/23";
-    cvc := "123";
-    token := nil
+	prebookId := "8iaO7PXBU"
+	guestFirstName := "Kim"
+	guestLastName := "James"
+	guestEmail := "test@nlite.ml"
+	paymentMethod := "CREDIT_CARD"
+	holderName := "Kim James"
+	cardNumber := "4242424242424242"
+	expireDate := "11/23"
+	cvc := "123"
 
     result, res, err := apiClient.BookApi.Book(context.Background()).PrebookId(prebookId).GuestFirstName(guestFirstName).GuestLastName(guestLastName).GuestEmail(guestEmail).PaymentMethod(paymentMethod).HolderName(holderName).CardNumber(cardNumber).ExpireDate(expireDate).Cvc(cvc).Execute()
 
@@ -531,12 +531,12 @@ If you wish to utilize a credit card, simply invoke the function as follows:
 If you prefer to use a Stripe token, you can invoke the function in the following manner:
 
 ```go
-    prebookId := "8iaO7PXBU";
-    guestFirstName := "Kim";
-    guestLastName := "James"; 
-    guestEmail := "test@nlite.ml";
-    paymentMethod := "STRIPE_TOKEN";
-    holderName := "Kim James";
+    prebookId := "8iaO7PXBU"
+    guestFirstName := "Kim"
+    guestLastName := "James"
+    guestEmail := "test@nlite.ml"
+    paymentMethod := "STRIPE_TOKEN"
+    holderName := "Kim James"
     token := "G4WTCNT4GJ6HYVKTPRDVSWSEJVMVUV2"
 
     result, res, err := apiClient.BookApi.Book(context.Background()).PrebookId(prebookId).GuestFirstName(guestFirstName).GuestLastName(guestLastName).GuestEmail(guestEmail).PaymentMethod(paymentMethod).HolderName(holderName).Token(token).Execute()
@@ -748,3 +748,8 @@ An array containing objects with the following properties:
 | Name        | Type       | Description   |
 | ----------- | ---------- | ------------- |
 | **guestId** | **string** | The guest ID. |
+
+
+# Example Project
+To see an example project demonstrating how to integrate the SDK, visit [liteAPI-go-sdk-examples](https://github.com/liteapi-travel/go-sdk-examples)
+
