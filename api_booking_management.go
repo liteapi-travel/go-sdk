@@ -58,7 +58,7 @@ func (a *BookingManagementApiService) RetrievedBookingExecute(r ApiRetrievedBook
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingManagementApiService.RetrievedBooking")
+	localBasePath, err := a.client.cfg.ServerBookURLWithContext(r.ctx, "BookingManagementApiService.RetrievedBooking")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericLiteAPIError{error: err.Error()}
 	}
@@ -187,7 +187,7 @@ func (a *BookingManagementApiService) CancelBookingExecute(r ApiCancelBookingReq
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingManagementApiService.CancelBooking")
+	localBasePath, err := a.client.cfg.ServerBookURLWithContext(r.ctx, "BookingManagementApiService.CancelBooking")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericLiteAPIError{error: err.Error()}
 	}
@@ -330,7 +330,7 @@ func (a *BookingManagementApiService) GetBookingListByGuestIdExecute(r ApiGetBoo
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingManagementApiService.GetBookingListByGuestId")
+	localBasePath, err := a.client.cfg.ServerBookURLWithContext(r.ctx, "BookingManagementApiService.GetBookingListByGuestId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericLiteAPIError{error: err.Error()}
 	}

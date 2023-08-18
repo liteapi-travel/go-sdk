@@ -64,6 +64,7 @@ type ServerVariable struct {
 // ServerConfiguration stores the information about a server
 type ServerConfiguration struct {
 	URL         string
+	BookURL     string
 	Description string
 	Variables   map[string]ServerVariable
 }
@@ -92,6 +93,7 @@ func NewConfiguration() *Configuration {
 		Servers: ServerConfigurations{
 			{
 				URL:         "https://api.liteapi.travel/v2.0",
+				BookURL:     "https://book.liteapi.travel/v2.0",
 				Description: "No description provided",
 			},
 		},
@@ -113,7 +115,22 @@ func (sc ServerConfigurations) URL(index int, variables map[string]string) (stri
 	server := sc[index]
 	url := server.URL
 
-	// go through variables and replace placeholders
+	return replacePlaceholders(server, variables, url)
+}
+
+// URL formats template on a index using given variables
+func (sc ServerConfigurations) BookURL(index int, variables map[string]string) (string, error) {
+	if index < 0 || len(sc) <= index {
+		return "", fmt.Errorf("index %v out of range %v", index, len(sc)-1)
+	}
+	server := sc[index]
+	url := server.BookURL
+
+	return replacePlaceholders(server, variables, url)
+}
+
+// go through variables and replace placeholders
+func replacePlaceholders(server ServerConfiguration, variables map[string]string, url string) (string, error) {
 	for name, variable := range server.Variables {
 		if value, ok := variables[name]; ok {
 			found := bool(len(variable.EnumValues) == 0)
@@ -212,4 +229,28 @@ func (c *Configuration) ServerURLWithContext(ctx context.Context, endpoint strin
 	}
 
 	return sc.URL(index, variables)
+}
+
+// ServerBookURLWithContext returns a new server URL given an endpoint
+func (c *Configuration) ServerBookURLWithContext(ctx context.Context, endpoint string) (string, error) {
+	sc, ok := c.OperationServers[endpoint]
+	if !ok {
+		sc = c.Servers
+	}
+
+	if ctx == nil {
+		return sc.BookURL(0, nil)
+	}
+
+	index, err := getServerOperationIndex(ctx, endpoint)
+	if err != nil {
+		return "", err
+	}
+
+	variables, err := getServerOperationVariables(ctx, endpoint)
+	if err != nil {
+		return "", err
+	}
+
+	return sc.BookURL(index, variables)
 }

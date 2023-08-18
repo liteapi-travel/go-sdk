@@ -123,7 +123,7 @@ func (a *BookApiService) BookExecute(r ApiBookRequest) (map[string]interface{}, 
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.Book")
+	localBasePath, err := a.client.cfg.ServerBookURLWithContext(r.ctx, "BookApiService.Book")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericLiteAPIError{error: err.Error()}
 	}
@@ -274,7 +274,7 @@ func (a *BookApiService) PreBookExecute(r ApiPreBookRequest) (map[string]interfa
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.PreBook")
+	localBasePath, err := a.client.cfg.ServerBookURLWithContext(r.ctx, "BookApiService.PreBook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericLiteAPIError{error: err.Error()}
 	}
