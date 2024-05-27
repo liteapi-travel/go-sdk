@@ -64,14 +64,14 @@ Run any of the normal go commands (build/install/test). The Go toolchain will re
 Alternatively, you can also explicitly go get the package into a project:
 
 ```sh
-    go get -u github.com/liteapi-travel/go-sdk/v2
+    go get -u github.com/liteapi-travel/go-sdk/v3
 ```
 
 Then, reference liteapi in a Go program with import:
 
 ```go
 import (
-	liteapi "github.com/liteapi-travel/go-sdk/v2"
+	liteapi "github.com/liteapi-travel/go-sdk/v3"
 )
 ```
 

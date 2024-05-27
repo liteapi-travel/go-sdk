@@ -88,12 +88,12 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "liteAPI/2.0.0/go",
+		UserAgent:     "liteAPI/3.0.0/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
-				URL:         "https://api.liteapi.travel/v2.0",
-				BookURL:     "https://book.liteapi.travel/v2.0",
+				URL:         "https://api.liteapi.travel/v3.0",
+				BookURL:     "https://book.liteapi.travel/v3.0",
 				Description: "No description provided",
 			},
 		},

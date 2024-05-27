@@ -80,9 +80,9 @@ func (r ApiGetMinimumRatesRequest) GuestId(guestId string) ApiGetMinimumRatesReq
 	return r
 }
 
-func (r ApiGetMinimumRatesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+/* func (r ApiGetMinimumRatesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetMinimumRatesExecute(r)
-}
+} */
 
 /*
 GetMinimumRates hotel minimum rates availability
@@ -112,7 +112,7 @@ func (a *SearchApiService) GetMinimumRates(ctx context.Context) ApiGetMinimumRat
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *SearchApiService) GetMinimumRatesExecute(r ApiGetMinimumRatesRequest) (map[string]interface{}, *http.Response, error) {
+/* func (a *SearchApiService) GetMinimumRatesExecute(r ApiGetMinimumRatesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -248,7 +248,7 @@ func (a *SearchApiService) GetMinimumRatesExecute(r ApiGetMinimumRatesRequest) (
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
-}
+} */
 
 type ApiGetFullRatesRequest struct {
 	ctx              context.Context

@@ -1,4 +1,4 @@
-module github.com/liteapi-travel/go-sdk/v2
+module github.com/liteapi-travel/go-sdk/v3
 
 go 1.18
 

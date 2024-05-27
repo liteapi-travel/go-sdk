@@ -11,7 +11,7 @@ import (
 	"context"
 	"testing"
 
-	liteapiclient "github.com/liteapi-travel/go-sdk/v2"
+	liteapiclient "github.com/liteapi-travel/go-sdk/v3"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
